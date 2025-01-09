@@ -3,7 +3,6 @@
 ## TODO
 
 Figure out layout- maybe center home list and put navigation in footer?
-
 PLZ ENJOY text animation as loading transition to content pages
 
 ## Recommended IDE Setup

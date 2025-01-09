@@ -1,18 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <RouterView />
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style scoped>
@@ -53,13 +48,9 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
   header .wrapper {
     display: flex;
-    place-items: flex-start;
+    place-items: center;
     flex-wrap: wrap;
   }
 
