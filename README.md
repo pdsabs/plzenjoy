@@ -2,8 +2,6 @@
 
 ## TODO
 
-Cleanup/rename template files
-Remove left-side welcome stuff
 Figure out layout- maybe center home list and put navigation in footer?
 
 PLZ ENJOY text animation as loading transition to content pages

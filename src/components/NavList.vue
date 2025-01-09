@@ -1,5 +1,5 @@
 <script setup>
-import WelcomeItem from './WelcomeItem.vue'
+import NavItem from './NavItem.vue'
 import WritingIcon from './icons/IconWriting.vue'
 import ContactIcon from './icons/IconContact.vue'
 import MusicIcon from './icons/IconMusic.vue'
@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <WelcomeItem>
+  <NavItem>
     <template #icon>
       <MusicIcon />
     </template>
@@ -20,9 +20,9 @@ import { RouterLink } from 'vue-router'
       >Listen</a
     >
     to my thoughts.
-  </WelcomeItem>
+  </NavItem>
 
-  <WelcomeItem>
+  <NavItem>
     <template #icon>
       <WritingIcon />
     </template>
@@ -30,9 +30,9 @@ import { RouterLink } from 'vue-router'
 
     <RouterLink to="/writing">Read</RouterLink>
     my thoughts.
-  </WelcomeItem>
+  </NavItem>
 
-  <WelcomeItem>
+  <NavItem>
     <template #icon>
       <ContactIcon />
     </template>
@@ -42,5 +42,5 @@ import { RouterLink } from 'vue-router'
       >Connect</a
     >
     with me.
-  </WelcomeItem>
+  </NavItem>
 </template>
