@@ -1,6 +1,10 @@
 # plzenjoy
 
-This template should help get you started developing with Vue 3 in Vite.
+## TODO
+
+Cleanup/rename template files
+Remove left-side welcome stuff
+Figure out layout- maybe center home list and put navigation in footer?
 
 ## Recommended IDE Setup
 
