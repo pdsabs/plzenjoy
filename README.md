@@ -6,6 +6,8 @@ Cleanup/rename template files
 Remove left-side welcome stuff
 Figure out layout- maybe center home list and put navigation in footer?
 
+PLZ ENJOY text animation as loading transition to content pages
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
