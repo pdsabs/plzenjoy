@@ -1,19 +1,40 @@
 <template>
-  <div class="about">
-    <p class="line-1 anim-typewriter">Plz enjoy.</p>
+  <div class="vertical-center-flex">
+    <p class="text-typewriter anim-typewriter">Plz enjoy.</p>
   </div>
 </template>
 
+<script setup>
+import { onMounted } from 'vue'
+
+const emit = defineEmits(['animation-end'])
+
+onMounted(() => {
+  const element = document.querySelector('.anim-typewriter')
+
+  console.log('Mounting PlzEnjoy!')
+
+  if (!element) {
+    emit('animation-end')
+    return
+  }
+
+  setTimeout(() => {
+    emit('animation-end')
+  }, 4000)
+})
+</script>
+
 <style scoped>
 @media (min-width: 1024px) {
-  .about {
+  .vertical-center-flex {
     min-height: 100vh;
     display: flex;
     align-items: center;
   }
 }
 
-.line-1 {
+.text-typewriter {
   top: 50%;
   width: 1em;
   margin: 0 auto;
@@ -48,4 +69,3 @@
   }
 }
 </style>
-<script setup></script>
