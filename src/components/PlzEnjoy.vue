@@ -49,7 +49,7 @@ onMounted(() => {
 /* Animation */
 .anim-typewriter {
   animation:
-    typewriter 2.5s steps(10) 1s 1 normal both,
+    typewriter 2.5s steps(10) 0s 1 normal both,
     blinkTextCursor 500ms steps(5) infinite normal;
 }
 @keyframes typewriter {
