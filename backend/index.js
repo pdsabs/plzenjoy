@@ -16,7 +16,6 @@ const musicEntries = []
 app.use(cors())
 app.use(bodyParser.json())
 
-// Dummy admin credentials (replace with environment variables or secure storage)
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 

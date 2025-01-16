@@ -1,14 +1,30 @@
 <template>
   <div class="vertical-center-flex">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend ex sed lacinia
-      vehicula. Vivamus auctor elementum ipsum, at facilisis enim euismod quis. Nullam id aliquam
-      velit, eu rutrum velit. Duis tristique dapibus magna scelerisque tincidunt. Mauris consequat
-      nisl sit amet nulla condimentum venenatis. Proin in laoreet libero. Duis id placerat nisl, et
-      blandit quam.
+    <p v-if="writing">
+      {{ writing }}
     </p>
+    <p v-else>Loading...</p>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios' // Import Axios
+
+const writing = ref(null)
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:5000/writings')
+
+    // Assuming the response is an array, get the first writing's content
+    writing.value = response.data[0]?.content || 'No writings found.'
+  } catch (error) {
+    console.error('Error fetching writings:', error)
+    writing.value = 'Failed to load writings.'
+  }
+})
+</script>
 
 <style>
 @media (min-width: 1024px) {
@@ -19,4 +35,3 @@
   }
 }
 </style>
-<script setup></script>
