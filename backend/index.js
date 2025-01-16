@@ -2,15 +2,30 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
+const { Pool } = require('pg')
 require('dotenv').config()
 
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 const SECRET_KEY = process.env.SECRET_KEY
 
-// In-memory storage for writings and music (for simplicity)
-const writings = []
-const musicEntries = []
+// PostgreSQL configuration
+const pool = new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT || 5432,
+})
+
+// Test database connection
+pool.connect((err) => {
+  if (err) {
+    console.error('Error connecting to PostgreSQL:', err.message)
+  } else {
+    console.log('Connected to PostgreSQL database')
+  }
+})
 
 // Middleware
 app.use(cors())
@@ -47,45 +62,63 @@ app.post('/login', (req, res) => {
 })
 
 // Submit writing route
-app.post('/submit-writing', verifyToken, (req, res) => {
+app.post('/submit-writing', verifyToken, async (req, res) => {
   const { title, content } = req.body
   if (!title || !content) {
     return res.status(400).json({ message: 'Title and content are required.' })
   }
-  const poem = {
-    id: writings.length + 1,
-    title,
-    content,
-    createdAt: new Date(),
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO writing (title, content, created_at) VALUES ($1, $2, NOW()) RETURNING *',
+      [title, content],
+    )
+    res.status(201).json({ message: 'Writing submitted successfully', poem: result.rows[0] })
+  } catch (err) {
+    console.error('Error inserting writing:', err)
+    res.status(500).json({ message: 'Internal server error' })
   }
-  writings.push(poem)
-  res.status(201).json({ message: 'Writing submitted successfully', poem })
 })
 
 // Submit music route
-app.post('/submit-music', verifyToken, (req, res) => {
+app.post('/submit-music', verifyToken, async (req, res) => {
   const { spotifyUrl, note } = req.body
   if (!spotifyUrl || !note) {
     return res.status(400).json({ message: 'Spotify URL and note are required.' })
   }
-  const music = {
-    id: musicEntries.length + 1,
-    spotifyUrl,
-    note,
-    createdAt: new Date(),
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO music (spotify_url, content, created_at) VALUES ($1, $2, NOW()) RETURNING *',
+      [spotifyUrl, note],
+    )
+    res.status(201).json({ message: 'Music submitted successfully', music: result.rows[0] })
+  } catch (err) {
+    console.error('Error inserting music:', err)
+    res.status(500).json({ message: 'Internal server error' })
   }
-  musicEntries.push(music)
-  res.status(201).json({ message: 'Music submitted successfully', music })
 })
 
-// Get all writings (optional, for testing)
-app.get('/writings', (req, res) => {
-  res.json(writings)
+// Get all writings
+app.get('/writings', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM writing')
+    res.json(result.rows)
+  } catch (err) {
+    console.error('Error fetching writings:', err)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 })
 
-// Get all music entries (optional, for testing)
-app.get('/music', (req, res) => {
-  res.json(musicEntries)
+// Get all music entries
+app.get('/music', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM music')
+    res.json(result.rows)
+  } catch (err) {
+    console.error('Error fetching music entries:', err)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 })
 
 // Start the server
