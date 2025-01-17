@@ -3,13 +3,14 @@
     <p v-if="writing">
       {{ writing }}
     </p>
-    <p v-else>Loading...</p>
+    <PlzEnjoy v-else />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios' // Import Axios
+import axios from 'axios'
+import PlzEnjoy from '@/components/PlzEnjoy.vue' // Import Axios
 
 const writing = ref(null)
 
@@ -26,12 +27,4 @@ onMounted(async () => {
 })
 </script>
 
-<style>
-@media (min-width: 1024px) {
-  .vertical-center-flex {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>

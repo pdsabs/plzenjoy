@@ -12,35 +12,24 @@ import { RouterLink } from 'vue-router'
       <MusicIcon />
     </template>
     <template #heading>Music</template>
-
-    <a
-      href="https://open.spotify.com/artist/2pwBng2g7Z23jZrsleMcpW?si=zakbnhBeTZanKb4Cu6Ibww"
-      target="_blank"
-      rel="noopener"
-      >Listen</a
-    >
-    to my thoughts.
+    <RouterLink to="/music">Listen</RouterLink>
   </NavItem>
 
   <NavItem>
     <template #icon>
       <WritingIcon />
     </template>
-    <template #heading>Text</template>
-
+    <template #heading>Writing</template>
     <RouterLink to="/writing">Read</RouterLink>
-    my thoughts.
   </NavItem>
 
   <NavItem>
     <template #icon>
       <ContactIcon />
     </template>
-    <template #heading>Contact Me</template>
-
+    <template #heading>About</template>
     <a href="https://www.instagram.com/ilovethesun123456789/" target="_blank" rel="noopener"
       >Connect</a
     >
-    with me.
   </NavItem>
 </template>

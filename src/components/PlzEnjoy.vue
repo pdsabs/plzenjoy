@@ -26,14 +26,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .vertical-center-flex {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-
 .text-typewriter {
   top: 50%;
   width: 1em;
