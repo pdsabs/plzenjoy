@@ -82,15 +82,26 @@ app.post('/submit-writing', verifyToken, async (req, res) => {
 
 // Submit music route
 app.post('/submit-music', verifyToken, async (req, res) => {
-  const { spotifyUrl, note } = req.body
-  if (!spotifyUrl || !note) {
-    return res.status(400).json({ message: 'Spotify URL and note are required.' })
+  const { spotifyUrl, content } = req.body
+
+  // Regular expression to validate Spotify embedded track URL
+  const spotifyUrlRegex = /^https:\/\/open\.spotify\.com\/embed\/track\/[a-zA-Z0-9]+(\?.*)?$/
+
+  if (!spotifyUrl || !content) {
+    return res.status(400).json({ message: 'Spotify URL and text content are required.' })
+  }
+
+  // Validate the Spotify URL
+  if (!spotifyUrlRegex.test(spotifyUrl)) {
+    return res
+      .status(400)
+      .json({ message: 'Invalid Spotify URL. It must be an embedded track link.' })
   }
 
   try {
     const result = await pool.query(
       'INSERT INTO music (spotify_url, content, created_at) VALUES ($1, $2, NOW()) RETURNING *',
-      [spotifyUrl, note],
+      [spotifyUrl, content],
     )
     res.status(201).json({ message: 'Music submitted successfully', music: result.rows[0] })
   } catch (err) {
