@@ -70,7 +70,7 @@ app.post('/submit-writing', verifyToken, async (req, res) => {
 
   try {
     const result = await pool.query(
-      'INSERT INTO writing (title, content, created_at) VALUES ($1, $2, NOW()) RETURNING *',
+      'INSERT INTO writing (title, content, created) VALUES ($1, $2, NOW()) RETURNING *',
       [title, content],
     )
     res.status(201).json({ message: 'Writing submitted successfully', poem: result.rows[0] })
@@ -100,7 +100,7 @@ app.post('/submit-music', verifyToken, async (req, res) => {
 
   try {
     const result = await pool.query(
-      'INSERT INTO music (spotify_url, content, created_at) VALUES ($1, $2, NOW()) RETURNING *',
+      'INSERT INTO music (spotifyurl, content, created) VALUES ($1, $2, NOW()) RETURNING *',
       [spotifyUrl, content],
     )
     res.status(201).json({ message: 'Music submitted successfully', music: result.rows[0] })
