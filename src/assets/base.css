@@ -2,45 +2,46 @@
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+    --vt-c-white: #ffffff;
+    --vt-c-white-soft: #f8f8f8;
+    --vt-c-white-mute: #f2f2f2;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+    --vt-c-black: #181818;
+    --vt-c-black-soft: #222222;
+    --vt-c-black-mute: #282828;
 
-  --vt-c-colorful: #361771;
-  --vt-c-colorful-soft: #401d83;
-  --vt-c-colorful-mute: #472589;
+    --vt-c-colorful: #7e22ce; /* Vibrant purple */
+    --vt-c-colorful-soft: #9b4dee; /* Softer purple */
+    --vt-c-colorful-mute: #6a1bbd; /* Muted purple */
 
-  --vt-c-icon-colorful-1: rgb(255, 0, 0);
+    --vt-c-icon-colorful-1: #ff8c42; /* Vibrant orange */
 
-  --vt-c-divider-colorful-1: rgb(38, 255, 0);
-  --vt-c-divider-colorful-2: rgb(0, 120, 255);
+    --vt-c-divider-colorful-1: #00c9a7; /* Aqua green */
+    --vt-c-divider-colorful-2: #ff5f7e; /* Vibrant pink */
 
-  --vt-c-text-colorful-1: rgb(255, 255, 20);
-  --vt-c-text-colorful-2: rgb(255, 157, 20);
-  --vt-c-text-light-1: var(--vt-c-black);
-  --vt-c-text-dark-1: var(--vt-c-white);
+    --vt-c-text-colorful-1: #f4c430; /* Vibrant yellow */
+    --vt-c-text-colorful-2: #e57373; /* Light red */
+    --vt-c-text-light-1: var(--vt-c-black);
+    --vt-c-text-dark-1: var(--vt-c-white);
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-colorful);
-  --color-background-soft: var(--vt-c-colorful-soft);
-  --color-background-mute: var(--vt-c-colorful-mute);
+    --color-background: var(--vt-c-colorful);
+    --color-background-soft: var(--vt-c-colorful-soft);
+    --color-background-mute: var(--vt-c-colorful-mute);
 
-  --color-border: var(--vt-c-divider-colorful-1);
-  --color-border-hover: var(--vt-c-divider-colorful-2);
+    --color-border: var(--vt-c-divider-colorful-1);
+    --color-border-hover: var(--vt-c-divider-colorful-2);
 
-  --color-heading: var(--vt-c-text-colorful-1);
-  --color-text: var(--vt-c-text-colorful-2);
+    --color-heading: var(--vt-c-text-colorful-1);
+    --color-text: var(--vt-c-text-colorful-2);
 
-  --color-icon: var(--vt-c-icon-colorful-1);
+    --color-icon: var(--vt-c-icon-colorful-1);
 
-  --section-gap: 160px;
+    --section-gap: 160px;
 }
+
 
 /* semantic color variables for this project */
 /*:root {*/

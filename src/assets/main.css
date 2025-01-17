@@ -7,12 +7,15 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsl(113, 100%, 50%);
-  transition: 0.4s;
-  padding: 3px;
+a {
+  color: #00e5ff; /* Bright Cyan */
+  text-decoration: none; /* Optional: Remove underline */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c084fc; /* Turquoise for hover effect */
+  text-decoration: underline; /* Add underline on hover for accessibility */
 }
 
 .item-list {
@@ -23,11 +26,7 @@ a,
   align-items: flex-start;
 }
 
-@media (hover: hover) {
-  a:hover {
-    text-decoration: underline;
-  }
-}
+
 
 @media (min-width: 1024px) {
   .vertical-center-flex {
