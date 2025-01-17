@@ -28,9 +28,9 @@ i {
   display: flex;
   place-items: center;
   place-content: center;
-  width: 32px;
-  height: 32px;
-  color: var(--color-text);
+  width: 64px;
+  height: 64px;
+  color: var(--color-icon);
 }
 
 h3 {

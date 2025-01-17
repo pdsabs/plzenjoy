@@ -1,5 +1,5 @@
 <template>
-  <div class="music-list">
+  <div class="item-list">
     <MusicItem
       v-for="item in music"
       :key="item.id"
@@ -29,12 +29,4 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
-.music-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  align-items: flex-start;
-}
-</style>
+<style scoped></style>

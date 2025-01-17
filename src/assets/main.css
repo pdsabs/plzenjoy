@@ -10,9 +10,17 @@
 a,
 .green {
   text-decoration: none;
-  color: hsl(113, 100%, 37%);
+  color: hsl(113, 100%, 50%);
   transition: 0.4s;
   padding: 3px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media (hover: hover) {
@@ -26,6 +34,14 @@ a,
     min-height: 100vh;
     display: flex;
     align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .center-center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

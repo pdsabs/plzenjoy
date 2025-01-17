@@ -1,12 +1,12 @@
 <template>
-  <!--  <div class="music-item-card">-->
-  <iframe
-    :src="spotifyUrl"
-    allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"
-  ></iframe>
-  <p>{{ content }}</p>
-  <!--  </div>-->
+  <div class="music-item-card">
+    <iframe
+      :src="spotifyUrl"
+      allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+    <p>{{ content }}</p>
+  </div>
 </template>
 
 <script setup>

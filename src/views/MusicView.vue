@@ -8,11 +8,4 @@
 import MusicList from '@/components/MusicList.vue'
 </script>
 
-<style>
-.center-center-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-</style>
+<style></style>
