@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import axios from '@/services/axios'
 import MusicItem from './MusicItem.vue'
 import PlzEnjoy from '@/components/PlzEnjoy.vue'
 
@@ -20,7 +20,7 @@ const music = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:5000/music')
+    const response = await axios.get('/music')
     music.value = response.data || []
   } catch (error) {
     console.error('Error fetching music:', error)

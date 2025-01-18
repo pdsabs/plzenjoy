@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import axios from '@/services/axios'
 import WritingItem from './WritingItem.vue'
 import PlzEnjoy from '@/components/PlzEnjoy.vue'
 
@@ -20,7 +20,7 @@ const writing = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:5000/writings')
+    const response = await axios.get('/writings')
     writing.value = response.data || []
   } catch (error) {
     console.error('Error fetching writing:', error)
