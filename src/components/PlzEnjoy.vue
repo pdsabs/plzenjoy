@@ -1,60 +1,50 @@
 <template>
   <div class="vertical-center-flex">
-    <p class="text-typewriter anim-typewriter">Plz enjoy.</p>
+    <p class="text-typewriter anim-typewriter">plz enjoy.</p>
   </div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
 
-const emit = defineEmits(['animation-end'])
-
 onMounted(() => {
   const element = document.querySelector('.anim-typewriter')
-
-  console.log('Mounting PlzEnjoy!')
-
-  if (!element) {
-    emit('animation-end')
-    return
-  }
-
-  setTimeout(() => {
-    emit('animation-end')
-  }, 4000)
 })
 </script>
 
 <style scoped>
 .text-typewriter {
-  top: 50%;
   width: 1em;
   margin: 0 auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  border-right: 2px solid var(--color-card);
   font-size: 180%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%);
 }
 
 /* Animation */
 .anim-typewriter {
   animation:
-    typewriter 2.5s steps(10) 0s 1 normal both,
+    typewriter 5s steps(10) infinite alternate both,
     blinkTextCursor 500ms steps(5) infinite normal;
 }
+
 @keyframes typewriter {
-  from {
+  0% {
     width: 0;
   }
-  to {
+  50% {
     width: 6em;
   }
+  100% {
+    width: 0;
+  }
 }
+
 @keyframes blinkTextCursor {
   from {
-    border-right-color: rgba(255, 255, 255, 0.75);
+    border-right-color: var(--color-card-title);
   }
   to {
     border-right-color: transparent;

@@ -21,7 +21,7 @@ a:hover {
 .item-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -52,17 +52,13 @@ a:hover {
   margin-top: 8px; /* Adds spacing between iframe and text */
 }
 
-@media (min-width: 768px) {
-
+.vertical-center-flex {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .vertical-center-flex {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
 @media (min-width: 1024px) {
   .center-center-flex {
     display: flex;
