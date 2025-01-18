@@ -17,6 +17,10 @@ a:hover {
   justify-content: center;
   align-items: flex-start;
 }
+.item-list h3 {
+  font-size: 2rem;
+  color: var(--color-heading);
+}
 
 .item-card {
   padding: 16px;
