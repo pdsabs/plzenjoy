@@ -11,25 +11,28 @@ import { RouterLink } from 'vue-router'
     <template #icon>
       <MusicIcon />
     </template>
-    <template #heading>Music</template>
-    <RouterLink to="/music">Listen</RouterLink>
+    <template #heading>
+      <RouterLink to="/music">Music</RouterLink>
+    </template>
   </NavItem>
 
   <NavItem>
     <template #icon>
       <WritingIcon />
     </template>
-    <template #heading>Writing</template>
-    <RouterLink to="/writing">Read</RouterLink>
+    <template #heading>
+      <RouterLink to="/writing">Read</RouterLink>
+    </template>
   </NavItem>
 
   <NavItem>
     <template #icon>
       <ContactIcon />
     </template>
-    <template #heading>About</template>
-    <a href="https://www.instagram.com/ilovethesun123456789/" target="_blank" rel="noopener"
-      >Connect</a
-    >
+    <template #heading>
+      <a href="https://www.instagram.com/ilovethesun123456789/" target="_blank" rel="noopener"
+        >Connect</a
+      >
+    </template>
   </NavItem>
 </template>

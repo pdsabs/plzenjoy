@@ -1,12 +1,5 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
 a {
   color: #00e5ff; /* Bright Cyan */
   text-decoration: none; /* Optional: Remove underline */
@@ -68,14 +61,14 @@ a:hover {
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
 
-  #app {
-    display: flex;
-    place-items: center;
-  }
+body {
+  display: flex;
+  place-items: center;
 }
