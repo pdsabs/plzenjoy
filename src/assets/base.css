@@ -41,6 +41,7 @@
     --color-text: var(--vt-c-text-light-1);
 
     --color-card: var(--vt-c-card-colorful-1);
+    --color-card-title: var(--vt-c-colorful-soft);
     --color-icon: var(--vt-c-icon-colorful-1);
 
     --section-gap: 160px;

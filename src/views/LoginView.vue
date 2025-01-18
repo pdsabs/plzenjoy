@@ -4,6 +4,7 @@
       <div class="form-group">
         <label for="username">Username</label>
         <input
+          autocomplete="username"
           type="text"
           id="username"
           v-model="username"
@@ -15,6 +16,7 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input
+          autocomplete="current-password"
           type="password"
           id="password"
           v-model="password"
