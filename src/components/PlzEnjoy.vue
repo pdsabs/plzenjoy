@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-center-flex">
+  <div class="center-center-flex">
     <p class="text-typewriter anim-typewriter">plz enjoy.</p>
   </div>
 </template>
@@ -14,19 +14,21 @@ onMounted(() => {
 
 <style scoped>
 .text-typewriter {
+  top: 50%;
   width: 1em;
   margin: 0 auto;
-  border-right: 2px solid var(--color-card);
+  border-right: 2px solid var(--color-background);
   font-size: 180%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  transform: translateY(-50%);
 }
 
 /* Animation */
 .anim-typewriter {
   animation:
-    typewriter 5s steps(10) infinite alternate both,
+    typewriter 3s steps(10) infinite both,
     blinkTextCursor 500ms steps(5) infinite normal;
 }
 
@@ -44,7 +46,7 @@ onMounted(() => {
 
 @keyframes blinkTextCursor {
   from {
-    border-right-color: var(--color-card-title);
+    border-right-color: var(--color-text);
   }
   to {
     border-right-color: transparent;
