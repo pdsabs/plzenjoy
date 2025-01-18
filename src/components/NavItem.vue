@@ -31,7 +31,7 @@ h3 {
 
 i {
   position: absolute;
-  top: calc(50% - 26px);
+  top: calc(50% - 24px);
   left: 30px;
   display: flex;
   place-items: center;
