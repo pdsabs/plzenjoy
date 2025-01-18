@@ -10,9 +10,12 @@
     --vt-c-black-soft: #222222;
     --vt-c-black-mute: #282828;
 
-    --vt-c-colorful: #7e22ce; /* Vibrant purple */
-    --vt-c-colorful-soft: #9b4dee; /* Softer purple */
-    --vt-c-colorful-mute: #6a1bbd; /* Muted purple */
+    --vt-c-colorful: #6a1fbf; /* Calmer vibrant purple */
+    --vt-c-colorful-soft: #845ec2; /* Softer purple */
+    --vt-c-colorful-mute: #5e3ea4; /* Muted, deeper purple */
+
+
+    --vt-c-card-colorful-1: #e6e0ff;
 
     --vt-c-icon-colorful-1: #ff8c42; /* Vibrant orange */
 
@@ -35,8 +38,9 @@
     --color-border-hover: var(--vt-c-divider-colorful-2);
 
     --color-heading: var(--vt-c-text-colorful-1);
-    --color-text: var(--vt-c-text-colorful-2);
+    --color-text: var(--vt-c-text-light-1);
 
+    --color-card: var(--vt-c-card-colorful-1);
     --color-icon: var(--vt-c-icon-colorful-1);
 
     --section-gap: 160px;

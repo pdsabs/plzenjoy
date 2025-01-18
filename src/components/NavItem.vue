@@ -14,7 +14,6 @@
 
 <style scoped>
 .item {
-  margin-top: 2rem;
   display: flex;
   position: relative;
 }
@@ -28,15 +27,15 @@ i {
   display: flex;
   place-items: center;
   place-content: center;
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   color: var(--color-icon);
 }
 
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.1rem;
   color: var(--color-heading);
 }
 
@@ -47,40 +46,12 @@ h3 {
   }
 
   i {
-    top: calc(50% - 25px);
-    left: -26px;
+    top: calc(50% - 39px);
+    left: -10px;
     position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
     border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
+    width: 60px;
+    height: 60px;
   }
 }
 </style>
