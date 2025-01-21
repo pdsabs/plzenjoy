@@ -18,7 +18,6 @@ const pool = new Pool({
   port: process.env.DB_PORT || 5432,
 })
 
-// Test database connection
 pool.connect((err) => {
   if (err) {
     console.error('Error connecting to PostgreSQL:', err.message)
@@ -49,6 +48,29 @@ function verifyToken(req, res, next) {
 }
 
 // Routes
+
+// Validate token route
+app.post('/validate-token', (req, res) => {
+  const authHeader = req.headers['authorization']
+
+  if (!authHeader) {
+    return res.status(403).json({ valid: false, message: 'No token provided.' })
+  }
+
+  // Extract the token (remove the "Bearer " prefix)
+  const token = authHeader.split(' ')[1]
+
+  if (!token) {
+    return res.status(403).json({ valid: false, message: 'No token provided.' })
+  }
+
+  try {
+    jwt.verify(token, SECRET_KEY)
+    res.status(200).json({ valid: true, message: 'Token is valid.' })
+  } catch (_) {
+    res.status(401).json({ valid: false, message: 'Invalid or expired token.' })
+  }
+})
 
 // Login route
 app.post('/login', (req, res) => {
@@ -112,6 +134,7 @@ app.post('/submit-music', verifyToken, async (req, res) => {
 
 // Get all writings
 app.get('/writings', async (req, res) => {
+  console.log('in writing')
   try {
     const result = await pool.query('SELECT * FROM writing')
     res.json(result.rows)
