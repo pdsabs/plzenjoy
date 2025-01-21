@@ -135,7 +135,6 @@ app.post('/submit-music', verifyToken, async (req, res) => {
 
 // Get all writings
 app.get('/writings', async (req, res) => {
-  console.log('in writing')
   try {
     const result = await pool.query('SELECT * FROM writing')
     res.json(result.rows)

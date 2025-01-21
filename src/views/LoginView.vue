@@ -36,36 +36,38 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="item-card">
-    <form @submit.prevent="handleLogin">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          autocomplete="username"
-          type="text"
-          id="username"
-          v-model="username"
-          placeholder="enter user"
-          required
-        />
-      </div>
+  <div class="item-list">
+    <div class="item-card">
+      <form @submit.prevent="handleLogin">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            autocomplete="username"
+            type="text"
+            id="username"
+            v-model="username"
+            placeholder="enter user"
+            required
+          />
+        </div>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          autocomplete="current-password"
-          type="password"
-          id="password"
-          v-model="password"
-          placeholder="enter password"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            autocomplete="current-password"
+            type="password"
+            id="password"
+            v-model="password"
+            placeholder="enter password"
+            required
+          />
+        </div>
 
-      <button type="submit" class="login-button" :disabled="!username || !password">Login</button>
+        <button type="submit" class="login-button" :disabled="!username || !password">Login</button>
 
-      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-    </form>
+        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+      </form>
+    </div>
   </div>
 </template>
 
