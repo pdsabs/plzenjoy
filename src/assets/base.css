@@ -62,6 +62,7 @@
 /*    --color-background-soft: var(--vt-c-colorful-soft);*/
 /*    --color-background-mute: var(--vt-c-colorful-mute);*/
 
+/*    --color-shadow: var(--vt-c-shadow-light);*/
 /*    --color-border: var(--vt-c-divider-colorful-1);*/
 /*    --color-border-hover: var(--vt-c-divider-colorful-2);*/
 
@@ -70,9 +71,6 @@
 
 /*    --color-link: var(--vt-c-text-dark-1);*/
 /*    --color-link-hover: var(--vt-c-text-dark-1);*/
-
-/*    !*--color-link: var(--vt-c-link-colorful);*!*/
-/*    !*--color-link-hover: var(--vt-c-link-hover-colorful);*!*/
 
 /*    --color-card: var(--vt-c-card-colorful-1);*/
 /*    --color-icon: var(--vt-c-text-dark-1);*/

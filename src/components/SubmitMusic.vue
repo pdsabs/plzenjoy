@@ -51,6 +51,9 @@ const handleSubmit = async () => {
 
     localStorage.removeItem(storageKey)
 
+    spotifyUrl.value = ''
+    content.value = ''
+
     console.log('Submission Successful:', response.data)
   } catch (error) {
     console.error('Submission Error:', error)

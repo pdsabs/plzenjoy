@@ -51,6 +51,9 @@ const handleSubmit = async () => {
 
     localStorage.removeItem(storageKey)
 
+    title.value = ''
+    content.value = ''
+
     console.log('Submission Successful:', response.data)
   } catch (error) {
     console.error('Submission Error:', error)
