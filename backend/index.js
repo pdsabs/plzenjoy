@@ -54,7 +54,7 @@ function verifyToken(req, res, next) {
 app.post('/login', (req, res) => {
   const { username, password } = req.body
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-    const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '1h' })
+    const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '2h' })
     res.json({ message: 'Login successful', token })
   } else {
     res.status(401).json({ message: 'Invalid credentials' })

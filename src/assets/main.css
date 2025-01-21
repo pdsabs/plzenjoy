@@ -34,20 +34,59 @@ a:hover {
   border-bottom: var(--color-text);
   border-bottom-style: dashed;
   border-bottom-width: 5px;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
-
 .item-card h3 {
   border-radius: 12px;
   padding-left: 1rem;
   padding-right: 1rem;
   color: var(--color-text);
 }
-
 .item-card p {
   text-align: left; /* Aligns text to the left */
   width: 100%; /* Ensures it spans the full width of the card */
   margin-top: 8px; /* Adds spacing between iframe and text */
+}
+.item-card textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.item-card > form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+.form-group input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:disabled {
+  background-color: #ff0000;
+  cursor: not-allowed;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--color-background-mute);
 }
 
 @media (min-width: 1024px) {

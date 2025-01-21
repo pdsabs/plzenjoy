@@ -55,7 +55,7 @@ const handleLogin = async () => {
 
     if (response.status === 200 && response.data.token) {
       localStorage.setItem('authToken', response.data.token)
-      window.location.href = '/'
+      window.location.href = '/submit'
     } else {
       throw new Error('Invalid credentials')
     }
@@ -79,16 +79,6 @@ const handleLogin = async () => {
   background-color: #fff;
 }
 
-.form-group {
-  margin-bottom: 16px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
 input {
   width: 100%;
   padding: 8px;
@@ -101,27 +91,6 @@ input:focus {
   outline: none;
   border-color: var(--color-border);
   box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
-}
-
-.login-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  color: var(--color-text);
-  background-color: var(--color-background);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.login-button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.login-button:hover:not(:disabled) {
-  background-color: var(--color-background-mute);
 }
 
 .error-message {
