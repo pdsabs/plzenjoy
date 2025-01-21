@@ -35,10 +35,11 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 
 // Helper function to verify tokens
 function verifyToken(req, res, next) {
-  const token = req.headers['authorization']
-  if (!token) {
-    return res.status(403).json({ message: 'No token provided.' })
+  const authHeader = req.headers['authorization']
+  if (!authHeader) {
+    return res.status(403).json({ valid: false, message: 'No token provided.' })
   }
+  const token = authHeader.split(' ')[1]
   try {
     jwt.verify(token, SECRET_KEY)
     next()

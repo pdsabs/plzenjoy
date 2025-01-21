@@ -15,7 +15,7 @@ const handleLogin = async () => {
       password: password.value,
     })
 
-    if (response.status === 200 && response.data.token) {
+    if (response.data.token) {
       localStorage.setItem('authToken', response.data.token)
       window.location.href = '/submit'
     }
