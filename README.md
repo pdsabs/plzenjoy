@@ -2,8 +2,11 @@
 
 ## TODO
 
-Figure out layout- maybe center home list and put navigation in footer?
-PLZ ENJOY text animation as loading transition to content pages
+Add navigation top bar
+Reorder displaying DB data so that newest items are first
+?Possibly add table of contents into navbar
+?Add fade-in animation to music and writings list pages
+?Hide writing content until title is clicked on (helpful for navigation)
 
 ## Recommended IDE Setup
 
