@@ -37,7 +37,7 @@ const handleSubmit = async () => {
           ></textarea>
         </label>
       </div>
-      <button type="submit" class="login-button">Submit Music</button>
+      <button type="submit" class="login-button" :disabled="!spotifyUrl">Submit Music</button>
     </form>
   </div>
 </template>

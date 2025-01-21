@@ -20,6 +20,8 @@
 
     --vt-c-icon-colorful-1: #ff8c42; /* Vibrant orange */
 
+    --vt-c-shadow-light: rgba(0, 0, 0, 0.1);
+
     --vt-c-divider-colorful-1: #00c9a7; /* Aqua green */
     --vt-c-divider-colorful-2: #ff5f7e; /* Vibrant pink */
     --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
@@ -39,6 +41,7 @@
     --color-background-soft: var(--vt-c-white-soft);
     --color-background-mute: var(--vt-c-white-mute);
 
+    --color-shadow: var(--vt-c-shadow-light);
     --color-border: var(--vt-c-divider-light-2);
     --color-border-hover: var(--vt-c-divider-light-1);
 

@@ -1,9 +1,3 @@
-<template>
-  <div class="center-center-flex">
-    <p class="text-typewriter anim-typewriter">plz enjoy.</p>
-  </div>
-</template>
-
 <script setup>
 import { onMounted } from 'vue'
 
@@ -11,6 +5,12 @@ onMounted(() => {
   const element = document.querySelector('.anim-typewriter')
 })
 </script>
+
+<template>
+  <div class="center-center-flex">
+    <p class="text-typewriter anim-typewriter">plz enjoy.</p>
+  </div>
+</template>
 
 <style scoped>
 .text-typewriter {

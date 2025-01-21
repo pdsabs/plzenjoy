@@ -43,17 +43,26 @@ a:hover {
   color: var(--color-text);
 }
 .item-card p {
-  text-align: left; /* Aligns text to the left */
-  width: 100%; /* Ensures it spans the full width of the card */
-  margin-top: 8px; /* Adds spacing between iframe and text */
+  text-align: left;
+  width: 100%;
+  margin-top: 8px;
 }
 .item-card textarea {
   width: 100%;
   max-width: 100%;
   padding: 5px;
   box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  min-height: 2em;
   resize: vertical;
 }
+.item-card textarea:focus {
+  outline: none;
+  border-color: var(--color-border);
+  box-shadow: 0 0 4px var(--color-shadow);
+}
+
 .item-card > form {
   width: 100%;
 }
@@ -65,7 +74,15 @@ a:hover {
   display: block;
   width: 100%;
   padding: 5px;
+  border-radius: 4px;
   box-sizing: border-box;
+  border: 1px solid var(--color-border);
+  font-size: 16px;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-border);
+  box-shadow: 0 0 4px var(--color-shadow);
 }
 
 .login-button {
@@ -73,7 +90,7 @@ a:hover {
   padding: 10px;
   font-size: 16px;
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-background-mute);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -81,12 +98,12 @@ a:hover {
 }
 
 .login-button:disabled {
-  background-color: #ff0000;
+  background-color: var(--color-background);
   cursor: not-allowed;
 }
 
 .login-button:hover:not(:disabled) {
-  background-color: var(--color-background-mute);
+  background-color: var(--color-background-soft);
 }
 
 @media (min-width: 1024px) {

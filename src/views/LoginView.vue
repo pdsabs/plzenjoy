@@ -1,5 +1,42 @@
+<script setup>
+import { ref } from 'vue'
+import axios from '@/services/axios'
+
+const username = ref('')
+const password = ref('')
+const errorMessage = ref(null)
+
+const handleLogin = async () => {
+  errorMessage.value = null
+
+  try {
+    const response = await axios.post('/login', {
+      username: username.value,
+      password: password.value,
+    })
+
+    if (response.status === 200 && response.data.token) {
+      localStorage.setItem('authToken', response.data.token)
+      window.location.href = '/submit'
+    }
+  } catch (error) {
+    if (error.response) {
+      if (error.response.status === 401) {
+        errorMessage.value = 'Invalid credentials.'
+      } else {
+        errorMessage.value = `Error: ${error.response.status} - ${error.response.data.message || 'An error occurred.'}`
+      }
+    } else if (error.request) {
+      errorMessage.value = 'Network error. Please check your connection.'
+    } else {
+      errorMessage.value = `Unexpected error: ${error.message}`
+    }
+  }
+}
+</script>
+
 <template>
-  <div class="login-view">
+  <div class="item-card">
     <form @submit.prevent="handleLogin">
       <div class="form-group">
         <label for="username">Username</label>
@@ -8,7 +45,7 @@
           type="text"
           id="username"
           v-model="username"
-          placeholder="Enter your username"
+          placeholder="enter user"
           required
         />
       </div>
@@ -20,79 +57,19 @@
           type="password"
           id="password"
           v-model="password"
-          placeholder="Enter your password"
+          placeholder="enter password"
           required
         />
       </div>
 
-      <button type="submit" class="login-button" :disabled="isLoading">
-        {{ isLoading ? 'Logging in...' : 'Login' }}
-      </button>
+      <button type="submit" class="login-button" :disabled="!username || !password">Login</button>
 
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import axios from '@/services/axios'
-
-const username = ref('')
-const password = ref('')
-const errorMessage = ref(null)
-const isLoading = ref(false)
-
-const handleLogin = async () => {
-  errorMessage.value = null
-  isLoading.value = true
-
-  try {
-    const response = await axios.post('/login', {
-      username: username.value,
-      password: password.value,
-    })
-
-    if (response.status === 200 && response.data.token) {
-      localStorage.setItem('authToken', response.data.token)
-      window.location.href = '/submit'
-    } else {
-      throw new Error('Invalid credentials')
-    }
-  } catch (error) {
-    errorMessage.value = 'Username or password is incorrect.'
-    console.error('Login error:', error)
-  } finally {
-    isLoading.value = false
-  }
-}
-</script>
-
 <style scoped>
-.login-view {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--color-border);
-  box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
-}
-
 .error-message {
   margin-top: 16px;
   color: red;

@@ -1,10 +1,3 @@
-<template>
-  <div class="item-card">
-    <h3>{{ title }}</h3>
-    <p>{{ content }}</p>
-  </div>
-</template>
-
 <script setup>
 defineProps({
   title: {
@@ -17,5 +10,12 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <div class="item-card">
+    <h3>{{ title }}</h3>
+    <p>{{ content }}</p>
+  </div>
+</template>
 
 <style scoped></style>

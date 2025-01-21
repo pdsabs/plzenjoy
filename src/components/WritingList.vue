@@ -1,17 +1,3 @@
-<template>
-  <div class="item-list">
-    <PlzEnjoy v-if="isLoading" />
-    <WritingItem
-      v-else-if="writing.length"
-      v-for="item in writing"
-      :key="item.id"
-      :title="item.title"
-      :content="item.content"
-    />
-    <h3 v-else>No writings exist.</h3>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from '@/services/axios'
@@ -41,5 +27,19 @@ onMounted(async () => {
   }
 })
 </script>
+
+<template>
+  <div class="item-list">
+    <PlzEnjoy v-if="isLoading" />
+    <WritingItem
+      v-else-if="writing.length"
+      v-for="item in writing"
+      :key="item.id"
+      :title="item.title"
+      :content="item.content"
+    />
+    <h3 v-else>No writings exist.</h3>
+  </div>
+</template>
 
 <style scoped></style>
