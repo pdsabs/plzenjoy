@@ -3,7 +3,7 @@ import NavList from '../components/NavList.vue'
 </script>
 
 <template>
-  <main>
+  <div class="center-center-flex">
     <NavList />
-  </main>
+  </div>
 </template>
