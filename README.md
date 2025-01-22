@@ -2,8 +2,7 @@
 
 ## TODO
 
-Reorder displaying DB data so that newest items are first
-?Hide writing content until title is clicked on (helpful for navigation)
+Hide writing content until title is clicked on (helpful for navigation)
 
 ## Recommended IDE Setup
 
