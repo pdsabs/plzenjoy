@@ -15,6 +15,8 @@ defineProps({
   <div class="item-card">
     <iframe
       :src="spotifyUrl"
+      style="opacity: 0; transition: opacity 0.3s ease"
+      onload="this.style.opacity=1"
       allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
     ></iframe>
