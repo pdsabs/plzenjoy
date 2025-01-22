@@ -1,17 +1,3 @@
-<template>
-  <div class="item-list">
-    <PlzEnjoy v-if="isLoading" />
-    <MusicItem
-      v-else-if="music.length"
-      v-for="item in music"
-      :key="item.id"
-      :spotifyUrl="item.spotifyurl"
-      :content="item.content"
-    />
-    <h3 v-else>No music exists.</h3>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from '@/services/axios'
@@ -42,4 +28,35 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped></style>
+<template>
+  <div class="item-list">
+    <PlzEnjoy v-if="isLoading" />
+    <transition-group name="fade" tag="div" class="item-list" v-else-if="music.length">
+      <MusicItem
+        v-for="(item, index) in music"
+        :key="item.id"
+        :spotifyUrl="item.spotifyurl"
+        :content="item.content"
+        :style="{ animationDelay: `${index * 0.2}s`, opacity: 0 }"
+      />
+    </transition-group>
+    <h3 v-else>No music exists.</h3>
+  </div>
+</template>
+
+<style scoped>
+.item-list > * {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

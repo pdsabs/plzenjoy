@@ -2,10 +2,7 @@
 
 ## TODO
 
-Add navigation top bar
 Reorder displaying DB data so that newest items are first
-?Possibly add table of contents into navbar
-?Add fade-in animation to music and writings list pages
 ?Hide writing content until title is clicked on (helpful for navigation)
 
 ## Recommended IDE Setup

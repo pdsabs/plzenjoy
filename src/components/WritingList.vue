@@ -31,15 +31,32 @@ onMounted(async () => {
 <template>
   <div class="item-list">
     <PlzEnjoy v-if="isLoading" />
-    <WritingItem
-      v-else-if="writing.length"
-      v-for="item in writing"
-      :key="item.id"
-      :title="item.title"
-      :content="item.content"
-    />
+    <transition-group name="fade" tag="div" class="item-list" v-else-if="writing.length">
+      <WritingItem
+        v-for="(item, index) in writing"
+        :key="item.id"
+        :title="item.title"
+        :content="item.content"
+        :style="{ animationDelay: `${index * 0.2}s`, opacity: 0 }"
+      />
+    </transition-group>
     <h3 v-else>No writings exist.</h3>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.item-list > * {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
