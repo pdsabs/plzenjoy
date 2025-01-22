@@ -16,6 +16,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 60px;
 }
 .item-list h3 {
   font-size: 2rem;
@@ -65,8 +66,6 @@ a:hover {
   border-color: var(--color-border);
   box-shadow: 0 0 4px var(--color-shadow);
 }
-
-
 
 .form-group {
   margin-bottom: 12px;

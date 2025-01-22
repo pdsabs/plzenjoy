@@ -34,6 +34,11 @@ onUnmounted(() => {
     <ul class="navbar-menu" :class="{ active: isMenuOpen }">
       <li><router-link to="/music">Music</router-link></li>
       <li><router-link to="/writing">Writing</router-link></li>
+      <li>
+        <a href="https://www.instagram.com/ilovethesun123456789/" target="_blank" rel="noopener"
+          >Connect</a
+        >
+      </li>
     </ul>
   </nav>
 </template>
@@ -116,7 +121,6 @@ onUnmounted(() => {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 10px;
