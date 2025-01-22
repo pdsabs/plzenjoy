@@ -6,7 +6,7 @@ import PlzEnjoy from '@/components/PlzEnjoy.vue'
 
 const isLoading = ref(true)
 const music = ref([])
-const MIN_ANIMATION_TIME = 3000
+const MIN_ANIMATION_TIME = 2000
 
 onMounted(async () => {
   const startTime = Date.now()

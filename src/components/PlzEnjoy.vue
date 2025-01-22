@@ -28,7 +28,7 @@ onMounted(() => {
 /* Animation */
 .anim-typewriter {
   animation:
-    typewriter 3s steps(10) infinite both,
+    typewriter 2s steps(10) infinite both,
     blinkTextCursor 500ms steps(5) infinite normal;
 }
 

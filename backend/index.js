@@ -136,7 +136,7 @@ app.post('/submit-music', verifyToken, async (req, res) => {
 // Get all writings
 app.get('/writings', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM writing')
+    const result = await pool.query('SELECT * FROM writing ORDER BY created DESC')
     res.json(result.rows)
   } catch (err) {
     console.error('Error fetching writings:', err)
@@ -147,7 +147,7 @@ app.get('/writings', async (req, res) => {
 // Get all music entries
 app.get('/music', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM music')
+    const result = await pool.query('SELECT * FROM music ORDER BY created DESC')
     res.json(result.rows)
   } catch (err) {
     console.error('Error fetching music entries:', err)
